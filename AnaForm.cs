@@ -17,7 +17,7 @@ namespace TelefonRehberi
         public AnaForm()
         {
             InitializeComponent();
-            SlidingPanel = new SlidingPanel(ref pnlSlidAyarlar, ref btnSliding, 240);
+            SlidingPanel = new SlidingPanel(ref pnlSlidAyarlar, ref btnSet, 240);
             SlidingPanel = new SlidingPanel(ref pnlSlidKisiEkle, ref btnAdd1, 240);
         }
         private void Form1_Load(object sender, EventArgs e)
@@ -30,9 +30,9 @@ namespace TelefonRehberi
         #region Ayarlar
         private void Button1_Click(object sender, EventArgs e)
         {
-            metroStyleManager1.Style = (MetroFramework.MetroColorStyle)metroComboBox1.SelectedIndex;
+            metroStyleManager1.Style = (MetroFramework.MetroColorStyle)cbmoBxRenk.SelectedIndex;
             dataGridView1.Style = Style;
-            metroComboBox1.Style = Style;
+            cbmoBxRenk.Style = Style;
             //metroTile1.Style = Style;
             pnlSlidAyarlar.BackColor = this.ForeColor;
         }
@@ -267,6 +267,22 @@ namespace TelefonRehberi
             DataTable dtbl = new DataTable();
             dtbl = ToDataTable(sorgu.ToList());
             dataGridView1.DataSource = dtbl;
+        }
+
+        private void TxtBxAra_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                TxtBxAra_Click(this, new EventArgs());
+        }
+
+        private void btnAdd1_Click(object sender, EventArgs e)
+        {
+            btnSet.Enabled = btnSet.Enabled ? false : true;
+        }
+
+        private void btnSet_Click(object sender, EventArgs e)
+        {
+            btnAdd1.Enabled = btnAdd1.Enabled ? false : true;
         }
     }
 
