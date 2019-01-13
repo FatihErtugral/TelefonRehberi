@@ -30,21 +30,26 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnaForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
             this.TxtBxAra = new MetroFramework.Controls.MetroTextBox();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnlNav = new System.Windows.Forms.Panel();
             this.btnSet = new System.Windows.Forms.Button();
             this.btnDel1 = new System.Windows.Forms.Button();
             this.btnSave1 = new System.Windows.Forms.Button();
             this.btnAdd1 = new System.Windows.Forms.Button();
             this.pnlSlidAyarlar = new System.Windows.Forms.Panel();
-            this.chckBxTabloErisim = new MetroFramework.Controls.MetroCheckBox();
-            this.cbmoBxRenk = new MetroFramework.Controls.MetroComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.grpBxRenk = new System.Windows.Forms.GroupBox();
+            this.cmbBoxRenk = new MetroFramework.Controls.MetroComboBox();
+            this.btnRenkSave = new System.Windows.Forms.Button();
+            this.grpBxTabloAyarlari = new System.Windows.Forms.GroupBox();
+            this.chckBxTabloDuzenleme = new MetroFramework.Controls.MetroCheckBox();
+            this.chckBxTabloSiralama = new MetroFramework.Controls.MetroCheckBox();
+            this.chckBxTabloEkleme = new MetroFramework.Controls.MetroCheckBox();
+            this.chckBxTabloSilme = new MetroFramework.Controls.MetroCheckBox();
             this.pnlSliderTitle = new System.Windows.Forms.Panel();
             this.lblAyarlar = new System.Windows.Forms.Label();
             this.pnlSlidKisiEkle = new System.Windows.Forms.Panel();
@@ -67,16 +72,21 @@
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sirket = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.pnlBody = new System.Windows.Forms.Panel();
             this.metroTile2 = new MetroFramework.Controls.MetroTile();
+            this.grpBxTema = new System.Windows.Forms.GroupBox();
+            this.cmbBoxTema = new MetroFramework.Controls.MetroComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
-            this.panel2.SuspendLayout();
+            this.pnlNav.SuspendLayout();
             this.pnlSlidAyarlar.SuspendLayout();
+            this.grpBxRenk.SuspendLayout();
+            this.grpBxTabloAyarlari.SuspendLayout();
             this.pnlSliderTitle.SuspendLayout();
             this.pnlSlidKisiEkle.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel5.SuspendLayout();
+            this.pnlBody.SuspendLayout();
+            this.grpBxTema.SuspendLayout();
             this.SuspendLayout();
             // 
             // metroStyleManager1
@@ -124,27 +134,27 @@
             this.TxtBxAra.ButtonClick += new MetroFramework.Controls.MetroTextBox.ButClick(this.TxtBxAra_Click);
             this.TxtBxAra.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtBxAra_KeyDown);
             // 
-            // panel2
+            // pnlNav
             // 
-            this.panel2.Controls.Add(this.btnSet);
-            this.panel2.Controls.Add(this.TxtBxAra);
-            this.panel2.Controls.Add(this.btnDel1);
-            this.panel2.Controls.Add(this.btnSave1);
-            this.panel2.Controls.Add(this.btnAdd1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(473, 49);
-            this.panel2.TabIndex = 10;
+            this.pnlNav.Controls.Add(this.btnSet);
+            this.pnlNav.Controls.Add(this.TxtBxAra);
+            this.pnlNav.Controls.Add(this.btnDel1);
+            this.pnlNav.Controls.Add(this.btnSave1);
+            this.pnlNav.Controls.Add(this.btnAdd1);
+            this.pnlNav.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlNav.Location = new System.Drawing.Point(0, 0);
+            this.pnlNav.Name = "pnlNav";
+            this.pnlNav.Size = new System.Drawing.Size(473, 49);
+            this.pnlNav.TabIndex = 10;
             // 
             // btnSet
             // 
-            this.btnSet.BackColor = System.Drawing.Color.Black;
+            this.btnSet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(44)))), ((int)(((byte)(65)))));
             this.btnSet.BackgroundImage = global::TelefonRehberi.Properties.Resources.appbar_settings;
             this.btnSet.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSet.FlatAppearance.BorderSize = 0;
             this.btnSet.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnSet.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnSet.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(54)))), ((int)(((byte)(76)))));
             this.btnSet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSet.ForeColor = System.Drawing.Color.DarkRed;
             this.btnSet.Location = new System.Drawing.Point(0, 0);
@@ -191,10 +201,11 @@
             // 
             // btnAdd1
             // 
-            this.btnAdd1.BackColor = System.Drawing.Color.Teal;
+            this.btnAdd1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(46)))), ((int)(((byte)(155)))));
             this.btnAdd1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdd1.BackgroundImage")));
             this.btnAdd1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAdd1.FlatAppearance.BorderSize = 0;
+            this.btnAdd1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(51)))), ((int)(((byte)(172)))));
             this.btnAdd1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd1.ForeColor = System.Drawing.Color.White;
             this.btnAdd1.Location = new System.Drawing.Point(43, 0);
@@ -208,38 +219,43 @@
             // 
             // pnlSlidAyarlar
             // 
-            this.pnlSlidAyarlar.BackColor = System.Drawing.SystemColors.ControlText;
-            this.pnlSlidAyarlar.Controls.Add(this.chckBxTabloErisim);
-            this.pnlSlidAyarlar.Controls.Add(this.cbmoBxRenk);
-            this.pnlSlidAyarlar.Controls.Add(this.button1);
+            this.pnlSlidAyarlar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(54)))), ((int)(((byte)(76)))));
+            this.pnlSlidAyarlar.Controls.Add(this.grpBxTema);
+            this.pnlSlidAyarlar.Controls.Add(this.grpBxRenk);
+            this.pnlSlidAyarlar.Controls.Add(this.btnRenkSave);
+            this.pnlSlidAyarlar.Controls.Add(this.grpBxTabloAyarlari);
             this.pnlSlidAyarlar.Controls.Add(this.pnlSliderTitle);
             this.pnlSlidAyarlar.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlSlidAyarlar.Location = new System.Drawing.Point(20, 60);
+            this.pnlSlidAyarlar.Location = new System.Drawing.Point(60, 60);
             this.pnlSlidAyarlar.Margin = new System.Windows.Forms.Padding(0);
             this.pnlSlidAyarlar.Name = "pnlSlidAyarlar";
             this.pnlSlidAyarlar.Size = new System.Drawing.Size(240, 685);
             this.pnlSlidAyarlar.TabIndex = 11;
             // 
-            // chckBxTabloErisim
+            // grpBxRenk
             // 
-            this.chckBxTabloErisim.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.chckBxTabloErisim.AutoSize = true;
-            this.chckBxTabloErisim.BackColor = System.Drawing.Color.Transparent;
-            this.chckBxTabloErisim.Location = new System.Drawing.Point(35, 121);
-            this.chckBxTabloErisim.Name = "chckBxTabloErisim";
-            this.chckBxTabloErisim.Size = new System.Drawing.Size(168, 15);
-            this.chckBxTabloErisim.TabIndex = 4;
-            this.chckBxTabloErisim.Text = "Tablo üzerinden düzenleme";
-            this.chckBxTabloErisim.UseSelectable = true;
+            this.grpBxRenk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.grpBxRenk.BackColor = System.Drawing.Color.Transparent;
+            this.grpBxRenk.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.grpBxRenk.Controls.Add(this.cmbBoxRenk);
+            this.grpBxRenk.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.grpBxRenk.Location = new System.Drawing.Point(20, 230);
+            this.grpBxRenk.Name = "grpBxRenk";
+            this.grpBxRenk.Size = new System.Drawing.Size(200, 69);
+            this.grpBxRenk.TabIndex = 5;
+            this.grpBxRenk.TabStop = false;
+            this.grpBxRenk.Tag = "";
+            this.grpBxRenk.Text = "Renk Ayarı";
             // 
-            // cbmoBxRenk
+            // cmbBoxRenk
             // 
-            this.cbmoBxRenk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbmoBxRenk.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cbmoBxRenk.FontWeight = MetroFramework.MetroComboBoxWeight.Bold;
-            this.cbmoBxRenk.IntegralHeight = false;
-            this.cbmoBxRenk.ItemHeight = 23;
-            this.cbmoBxRenk.Items.AddRange(new object[] {
+            this.cmbBoxRenk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbBoxRenk.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(44)))), ((int)(((byte)(65)))));
+            this.cmbBoxRenk.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cmbBoxRenk.FontWeight = MetroFramework.MetroComboBoxWeight.Bold;
+            this.cmbBoxRenk.IntegralHeight = false;
+            this.cmbBoxRenk.ItemHeight = 23;
+            this.cmbBoxRenk.Items.AddRange(new object[] {
             "Default",
             "Black",
             "White",
@@ -255,34 +271,122 @@
             "Purple",
             "Red",
             "Yellow"});
-            this.cbmoBxRenk.Location = new System.Drawing.Point(35, 68);
-            this.cbmoBxRenk.Name = "cbmoBxRenk";
-            this.cbmoBxRenk.Size = new System.Drawing.Size(121, 29);
-            this.cbmoBxRenk.TabIndex = 3;
-            this.cbmoBxRenk.UseSelectable = true;
+            this.cmbBoxRenk.Location = new System.Drawing.Point(21, 24);
+            this.cmbBoxRenk.Name = "cmbBoxRenk";
+            this.cmbBoxRenk.Size = new System.Drawing.Size(158, 29);
+            this.cmbBoxRenk.TabIndex = 3;
+            this.cmbBoxRenk.UseSelectable = true;
+            this.cmbBoxRenk.SelectedIndexChanged += new System.EventHandler(this.cmbBoxRenk_SelectedIndexChanged);
             // 
-            // button1
+            // btnRenkSave
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.PaleVioletRed;
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(177, 68);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(29, 29);
-            this.button1.TabIndex = 1;
-            this.button1.TabStop = false;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            this.btnRenkSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRenkSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(166)))), ((int)(((byte)(16)))));
+            this.btnRenkSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRenkSave.FlatAppearance.BorderSize = 0;
+            this.btnRenkSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRenkSave.Font = new System.Drawing.Font("Segoe UI Historic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRenkSave.ForeColor = System.Drawing.Color.White;
+            this.btnRenkSave.Location = new System.Drawing.Point(148, 420);
+            this.btnRenkSave.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.btnRenkSave.Name = "btnRenkSave";
+            this.btnRenkSave.Size = new System.Drawing.Size(72, 36);
+            this.btnRenkSave.TabIndex = 1;
+            this.btnRenkSave.TabStop = false;
+            this.btnRenkSave.Text = "Kaydet";
+            this.btnRenkSave.UseVisualStyleBackColor = false;
+            this.btnRenkSave.Click += new System.EventHandler(this.Button1_Click);
+            // 
+            // grpBxTabloAyarlari
+            // 
+            this.grpBxTabloAyarlari.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.grpBxTabloAyarlari.BackColor = System.Drawing.Color.Transparent;
+            this.grpBxTabloAyarlari.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.grpBxTabloAyarlari.Controls.Add(this.chckBxTabloDuzenleme);
+            this.grpBxTabloAyarlari.Controls.Add(this.chckBxTabloSiralama);
+            this.grpBxTabloAyarlari.Controls.Add(this.chckBxTabloEkleme);
+            this.grpBxTabloAyarlari.Controls.Add(this.chckBxTabloSilme);
+            this.grpBxTabloAyarlari.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.grpBxTabloAyarlari.Location = new System.Drawing.Point(20, 51);
+            this.grpBxTabloAyarlari.Name = "grpBxTabloAyarlari";
+            this.grpBxTabloAyarlari.Size = new System.Drawing.Size(200, 142);
+            this.grpBxTabloAyarlari.TabIndex = 5;
+            this.grpBxTabloAyarlari.TabStop = false;
+            this.grpBxTabloAyarlari.Tag = "";
+            this.grpBxTabloAyarlari.Text = "Tablo Ayarları";
+            // 
+            // chckBxTabloDuzenleme
+            // 
+            this.chckBxTabloDuzenleme.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.chckBxTabloDuzenleme.BackColor = System.Drawing.Color.Transparent;
+            this.chckBxTabloDuzenleme.DisplayFocus = true;
+            this.chckBxTabloDuzenleme.ForeColor = System.Drawing.Color.MintCream;
+            this.chckBxTabloDuzenleme.Location = new System.Drawing.Point(22, 24);
+            this.chckBxTabloDuzenleme.Name = "chckBxTabloDuzenleme";
+            this.chckBxTabloDuzenleme.Size = new System.Drawing.Size(156, 15);
+            this.chckBxTabloDuzenleme.TabIndex = 4;
+            this.chckBxTabloDuzenleme.TabStop = false;
+            this.chckBxTabloDuzenleme.Text = "Düzenlemeyi Ekinleştir";
+            this.chckBxTabloDuzenleme.UseCustomBackColor = true;
+            this.chckBxTabloDuzenleme.UseCustomForeColor = true;
+            this.chckBxTabloDuzenleme.UseSelectable = true;
+            this.chckBxTabloDuzenleme.CheckedChanged += new System.EventHandler(this.chckBxTabloDuzenleme_CheckedChanged);
+            // 
+            // chckBxTabloSiralama
+            // 
+            this.chckBxTabloSiralama.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.chckBxTabloSiralama.BackColor = System.Drawing.Color.Transparent;
+            this.chckBxTabloSiralama.DisplayFocus = true;
+            this.chckBxTabloSiralama.ForeColor = System.Drawing.Color.MintCream;
+            this.chckBxTabloSiralama.Location = new System.Drawing.Point(22, 111);
+            this.chckBxTabloSiralama.Name = "chckBxTabloSiralama";
+            this.chckBxTabloSiralama.Size = new System.Drawing.Size(156, 15);
+            this.chckBxTabloSiralama.TabIndex = 4;
+            this.chckBxTabloSiralama.TabStop = false;
+            this.chckBxTabloSiralama.Text = "Sıralmayı Etkinleştir";
+            this.chckBxTabloSiralama.UseCustomBackColor = true;
+            this.chckBxTabloSiralama.UseCustomForeColor = true;
+            this.chckBxTabloSiralama.UseSelectable = true;
+            this.chckBxTabloSiralama.CheckedChanged += new System.EventHandler(this.chckBxTabloSiralama_CheckedChanged);
+            // 
+            // chckBxTabloEkleme
+            // 
+            this.chckBxTabloEkleme.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.chckBxTabloEkleme.BackColor = System.Drawing.Color.Transparent;
+            this.chckBxTabloEkleme.DisplayFocus = true;
+            this.chckBxTabloEkleme.ForeColor = System.Drawing.Color.MintCream;
+            this.chckBxTabloEkleme.Location = new System.Drawing.Point(22, 53);
+            this.chckBxTabloEkleme.Name = "chckBxTabloEkleme";
+            this.chckBxTabloEkleme.Size = new System.Drawing.Size(156, 15);
+            this.chckBxTabloEkleme.TabIndex = 4;
+            this.chckBxTabloEkleme.TabStop = false;
+            this.chckBxTabloEkleme.Text = "Eklemeyi Etkinleştir";
+            this.chckBxTabloEkleme.UseCustomBackColor = true;
+            this.chckBxTabloEkleme.UseCustomForeColor = true;
+            this.chckBxTabloEkleme.UseSelectable = true;
+            this.chckBxTabloEkleme.CheckedChanged += new System.EventHandler(this.chckBxTabloEkleme_CheckedChanged);
+            // 
+            // chckBxTabloSilme
+            // 
+            this.chckBxTabloSilme.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.chckBxTabloSilme.BackColor = System.Drawing.Color.Transparent;
+            this.chckBxTabloSilme.DisplayFocus = true;
+            this.chckBxTabloSilme.ForeColor = System.Drawing.Color.MintCream;
+            this.chckBxTabloSilme.Location = new System.Drawing.Point(22, 82);
+            this.chckBxTabloSilme.Name = "chckBxTabloSilme";
+            this.chckBxTabloSilme.Size = new System.Drawing.Size(156, 15);
+            this.chckBxTabloSilme.TabIndex = 4;
+            this.chckBxTabloSilme.TabStop = false;
+            this.chckBxTabloSilme.Text = "Silmeyi Etkinleştir";
+            this.chckBxTabloSilme.UseCustomBackColor = true;
+            this.chckBxTabloSilme.UseCustomForeColor = true;
+            this.chckBxTabloSilme.UseSelectable = true;
+            this.chckBxTabloSilme.CheckedChanged += new System.EventHandler(this.chckBxTabloSilme_CheckedChanged);
             // 
             // pnlSliderTitle
             // 
             this.pnlSliderTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlSliderTitle.BackColor = System.Drawing.SystemColors.WindowText;
+            this.pnlSliderTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(44)))), ((int)(((byte)(65)))));
             this.pnlSliderTitle.Controls.Add(this.lblAyarlar);
             this.pnlSliderTitle.Location = new System.Drawing.Point(0, 0);
             this.pnlSliderTitle.Margin = new System.Windows.Forms.Padding(0);
@@ -304,7 +408,7 @@
             // 
             // pnlSlidKisiEkle
             // 
-            this.pnlSlidKisiEkle.BackColor = System.Drawing.Color.Teal;
+            this.pnlSlidKisiEkle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(51)))), ((int)(((byte)(172)))));
             this.pnlSlidKisiEkle.Controls.Add(this.LblTelKntrl);
             this.pnlSlidKisiEkle.Controls.Add(this.LblSoyadKntrl);
             this.pnlSlidKisiEkle.Controls.Add(this.LblAdKntrl);
@@ -316,7 +420,7 @@
             this.pnlSlidKisiEkle.Controls.Add(this.TxtBxAd);
             this.pnlSlidKisiEkle.Controls.Add(this.panel6);
             this.pnlSlidKisiEkle.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlSlidKisiEkle.Location = new System.Drawing.Point(260, 60);
+            this.pnlSlidKisiEkle.Location = new System.Drawing.Point(20, 60);
             this.pnlSlidKisiEkle.Margin = new System.Windows.Forms.Padding(0);
             this.pnlSlidKisiEkle.Name = "pnlSlidKisiEkle";
             this.pnlSlidKisiEkle.Size = new System.Drawing.Size(40, 685);
@@ -398,7 +502,7 @@
             this.TxtBxTelNo.MaxLength = 11;
             this.TxtBxTelNo.Name = "TxtBxTelNo";
             this.TxtBxTelNo.PasswordChar = '\0';
-            this.TxtBxTelNo.PromptText = "555 555 55 55";
+            this.TxtBxTelNo.PromptText = "0555 555 55 55";
             this.TxtBxTelNo.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.TxtBxTelNo.SelectedText = "";
             this.TxtBxTelNo.SelectionLength = 0;
@@ -409,10 +513,9 @@
             this.TxtBxTelNo.Size = new System.Drawing.Size(169, 23);
             this.TxtBxTelNo.TabIndex = 12;
             this.TxtBxTelNo.UseSelectable = true;
-            this.TxtBxTelNo.WaterMark = "555 555 55 55";
+            this.TxtBxTelNo.WaterMark = "0555 555 55 55";
             this.TxtBxTelNo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TxtBxTelNo.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.TxtBxTelNo.EnabledChanged += new System.EventHandler(this.TxtBxTelNo_EnabledChanged);
             this.TxtBxTelNo.TextChanged += new System.EventHandler(this.Txt_KisiEkle_TabStopChanged);
             this.TxtBxTelNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AllowNumbersOnly);
             // 
@@ -559,12 +662,12 @@
             // panel6
             // 
             this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel6.BackColor = System.Drawing.Color.Teal;
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(46)))), ((int)(((byte)(155)))));
             this.panel6.Controls.Add(this.lblEkleTitle);
             this.panel6.Location = new System.Drawing.Point(-200, 0);
             this.panel6.Margin = new System.Windows.Forms.Padding(0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(234, 36);
+            this.panel6.Size = new System.Drawing.Size(240, 36);
             this.panel6.TabIndex = 1;
             // 
             // lblEkleTitle
@@ -581,19 +684,21 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(170)))), ((int)(((byte)(173)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(201)))), ((int)(((byte)(206)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.dataGridView1.ColumnHeadersHeight = 20;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -603,14 +708,14 @@
             this.TelNo,
             this.Email,
             this.Sirket});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(201)))), ((int)(((byte)(206)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle19;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -618,22 +723,21 @@
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(20);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(170)))), ((int)(((byte)(173)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(201)))), ((int)(((byte)(206)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle20;
             this.dataGridView1.RowHeadersWidth = 20;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(564, 573);
-            this.dataGridView1.Style = MetroFramework.MetroColorStyle.Teal;
             this.dataGridView1.TabIndex = 6;
-            this.dataGridView1.Theme = MetroFramework.MetroThemeStyle.Light;
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.GrdDataView_CellValueChanged);
             this.dataGridView1.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridView1_EditingControlShowing);
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
@@ -644,6 +748,7 @@
             this.KisilerID.DataPropertyName = "KisilerID";
             this.KisilerID.HeaderText = "Kisi ID";
             this.KisilerID.Name = "KisilerID";
+            this.KisilerID.ReadOnly = true;
             this.KisilerID.Visible = false;
             // 
             // KisiAdi
@@ -652,6 +757,7 @@
             this.KisiAdi.HeaderText = "Kişi Adı";
             this.KisiAdi.MaxInputLength = 15;
             this.KisiAdi.Name = "KisiAdi";
+            this.KisiAdi.ReadOnly = true;
             // 
             // KisiSoyadi
             // 
@@ -659,17 +765,19 @@
             this.KisiSoyadi.HeaderText = "Kişi Soyadı";
             this.KisiSoyadi.MaxInputLength = 20;
             this.KisiSoyadi.Name = "KisiSoyadi";
+            this.KisiSoyadi.ReadOnly = true;
             // 
             // TelNo
             // 
             this.TelNo.DataPropertyName = "TelNo";
-            dataGridViewCellStyle2.Format = "N0";
-            dataGridViewCellStyle2.NullValue = null;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.TelNo.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle18.Format = "N0";
+            dataGridViewCellStyle18.NullValue = null;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.TelNo.DefaultCellStyle = dataGridViewCellStyle18;
             this.TelNo.HeaderText = "Tel No";
             this.TelNo.MaxInputLength = 11;
             this.TelNo.Name = "TelNo";
+            this.TelNo.ReadOnly = true;
             this.TelNo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // Email
@@ -678,6 +786,7 @@
             this.Email.HeaderText = "Email";
             this.Email.MaxInputLength = 50;
             this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
             // 
             // Sirket
             // 
@@ -685,6 +794,7 @@
             this.Sirket.HeaderText = "Şirket";
             this.Sirket.MaxInputLength = 50;
             this.Sirket.Name = "Sirket";
+            this.Sirket.ReadOnly = true;
             // 
             // metroTabControl1
             // 
@@ -696,27 +806,63 @@
             this.metroTabControl1.TabIndex = 14;
             this.metroTabControl1.UseSelectable = true;
             // 
-            // panel5
+            // pnlBody
             // 
-            this.panel5.Controls.Add(this.metroTile2);
-            this.panel5.Controls.Add(this.panel2);
-            this.panel5.Controls.Add(this.dataGridView1);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(300, 60);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(473, 685);
-            this.panel5.TabIndex = 15;
+            this.pnlBody.Controls.Add(this.metroTile2);
+            this.pnlBody.Controls.Add(this.pnlNav);
+            this.pnlBody.Controls.Add(this.dataGridView1);
+            this.pnlBody.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlBody.Location = new System.Drawing.Point(300, 60);
+            this.pnlBody.Name = "pnlBody";
+            this.pnlBody.Size = new System.Drawing.Size(473, 685);
+            this.pnlBody.TabIndex = 15;
             // 
             // metroTile2
             // 
             this.metroTile2.ActiveControl = null;
+            this.metroTile2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.metroTile2.Enabled = false;
-            this.metroTile2.Location = new System.Drawing.Point(0, 55);
+            this.metroTile2.Location = new System.Drawing.Point(0, 51);
             this.metroTile2.Name = "metroTile2";
-            this.metroTile2.Size = new System.Drawing.Size(1224, 6);
+            this.metroTile2.Size = new System.Drawing.Size(473, 5);
             this.metroTile2.TabIndex = 11;
             this.metroTile2.Text = "metroTile2";
             this.metroTile2.UseSelectable = true;
+            // 
+            // grpBxTema
+            // 
+            this.grpBxTema.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.grpBxTema.BackColor = System.Drawing.Color.Transparent;
+            this.grpBxTema.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.grpBxTema.Controls.Add(this.cmbBoxTema);
+            this.grpBxTema.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.grpBxTema.Location = new System.Drawing.Point(20, 314);
+            this.grpBxTema.Name = "grpBxTema";
+            this.grpBxTema.Size = new System.Drawing.Size(200, 69);
+            this.grpBxTema.TabIndex = 5;
+            this.grpBxTema.TabStop = false;
+            this.grpBxTema.Tag = "";
+            this.grpBxTema.Text = "Renk Ayarı";
+            // 
+            // cmbBoxTema
+            // 
+            this.cmbBoxTema.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbBoxTema.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(44)))), ((int)(((byte)(65)))));
+            this.cmbBoxTema.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cmbBoxTema.FontWeight = MetroFramework.MetroComboBoxWeight.Bold;
+            this.cmbBoxTema.IntegralHeight = false;
+            this.cmbBoxTema.ItemHeight = 23;
+            this.cmbBoxTema.Items.AddRange(new object[] {
+            "Default",
+            "Light",
+            "Dark"});
+            this.cmbBoxTema.Location = new System.Drawing.Point(21, 24);
+            this.cmbBoxTema.Name = "cmbBoxTema";
+            this.cmbBoxTema.Size = new System.Drawing.Size(158, 29);
+            this.cmbBoxTema.TabIndex = 3;
+            this.cmbBoxTema.UseSelectable = true;
+            this.cmbBoxTema.SelectedIndexChanged += new System.EventHandler(this.cmbBoxTema_SelectedIndexChanged);
             // 
             // AnaForm
             // 
@@ -724,10 +870,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.ClientSize = new System.Drawing.Size(793, 745);
-            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.pnlBody);
             this.Controls.Add(this.metroTabControl1);
-            this.Controls.Add(this.pnlSlidKisiEkle);
             this.Controls.Add(this.pnlSlidAyarlar);
+            this.Controls.Add(this.pnlSlidKisiEkle);
             this.Name = "AnaForm";
             this.Padding = new System.Windows.Forms.Padding(20, 60, 20, 0);
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.AeroShadow;
@@ -735,9 +881,10 @@
             this.Text = "Telefon Rehberi";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).EndInit();
-            this.panel2.ResumeLayout(false);
+            this.pnlNav.ResumeLayout(false);
             this.pnlSlidAyarlar.ResumeLayout(false);
-            this.pnlSlidAyarlar.PerformLayout();
+            this.grpBxRenk.ResumeLayout(false);
+            this.grpBxTabloAyarlari.ResumeLayout(false);
             this.pnlSliderTitle.ResumeLayout(false);
             this.pnlSliderTitle.PerformLayout();
             this.pnlSlidKisiEkle.ResumeLayout(false);
@@ -745,7 +892,8 @@
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel5.ResumeLayout(false);
+            this.pnlBody.ResumeLayout(false);
+            this.grpBxTema.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -754,38 +902,45 @@
         private System.Windows.Forms.Button btnAdd1;
         private System.Windows.Forms.Button btnSave1;
         private System.Windows.Forms.Button btnDel1;
-        private MetroFramework.Controls.MetroTextBox TxtBxAra;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel pnlSlidAyarlar;
         private System.Windows.Forms.Button btnSet;
+        private System.Windows.Forms.Button btnRenkSave;
+        private System.Windows.Forms.Button btnSaveKisiEkle;
+        private System.Windows.Forms.Panel pnlNav;
+        private System.Windows.Forms.Panel pnlSlidAyarlar;
         private System.Windows.Forms.Panel pnlSliderTitle;
-        private System.Windows.Forms.Label lblAyarlar;
         private System.Windows.Forms.Panel pnlSlidKisiEkle;
+        private System.Windows.Forms.Panel pnlBody;
         private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label lblAyarlar;
         private System.Windows.Forms.Label lblEkleTitle;
-        private MetroFramework.Controls.MetroComboBox cbmoBxRenk;
-        private MetroFramework.Controls.MetroTextBox TxtBxAd;
-        private MetroFramework.Controls.MetroTextBox TxtBxTelNo;
-        private MetroFramework.Controls.MetroTextBox TxtBxSoyad;
-        private System.Windows.Forms.Button button1;
-        private MetroFramework.Components.MetroStyleManager metroStyleManager1;
         private System.Windows.Forms.Label LblTelKntrl;
         private System.Windows.Forms.Label LblSoyadKntrl;
         private System.Windows.Forms.Label LblAdKntrl;
-        private System.Windows.Forms.Button btnSaveKisiEkle;
+        private MetroFramework.Components.MetroStyleManager metroStyleManager1;
+        private MetroFramework.Controls.MetroTextBox TxtBxAra;
+        private MetroFramework.Controls.MetroTextBox TxtBxAd;
+        private MetroFramework.Controls.MetroTextBox TxtBxTelNo;
+        private MetroFramework.Controls.MetroTextBox TxtBxSoyad;
         private MetroFramework.Controls.MetroTextBox TxtBxSirket;
         private MetroFramework.Controls.MetroTextBox TxtBxEmail;
         private MetroFramework.Controls.MetroTabControl metroTabControl1;
-        private MetroFramework.Controls.MetroGrid dataGridView1;
-        private System.Windows.Forms.Panel panel5;
+        private MetroFramework.Controls.MetroComboBox cmbBoxRenk;
         private MetroFramework.Controls.MetroTile metroTile2;
+        private MetroFramework.Controls.MetroGrid dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn KisilerID;
         private System.Windows.Forms.DataGridViewTextBoxColumn KisiAdi;
         private System.Windows.Forms.DataGridViewTextBoxColumn KisiSoyadi;
         private System.Windows.Forms.DataGridViewTextBoxColumn TelNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sirket;
-        private MetroFramework.Controls.MetroCheckBox chckBxTabloErisim;
+        private MetroFramework.Controls.MetroCheckBox chckBxTabloDuzenleme;
+        private MetroFramework.Controls.MetroCheckBox chckBxTabloSiralama;
+        private MetroFramework.Controls.MetroCheckBox chckBxTabloSilme;
+        private MetroFramework.Controls.MetroCheckBox chckBxTabloEkleme;
+        private System.Windows.Forms.GroupBox grpBxRenk;
+        private System.Windows.Forms.GroupBox grpBxTabloAyarlari;
+        private System.Windows.Forms.GroupBox grpBxTema;
+        private MetroFramework.Controls.MetroComboBox cmbBoxTema;
     }
 }
 

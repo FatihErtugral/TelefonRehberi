@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
+using TelefonRehberi.Properties;
 
 //  metadata=res://*/Model1.csdl|res://*/Model1.ssdl|res://*/Model1.msl;provider=System.Data.SqlClient;provider connection string="data source=KOD;initial catalog=TelefonRehberi;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework"
 
@@ -22,23 +23,22 @@ namespace TelefonRehberi
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.StyleManager = metroStyleManager1;
+            SetupSettings();
             DataGridView_Guncelle();
-            //dataGridView1.CellBeginEdit += new DataGridViewCellCancelEventHandler(DataGridView1_CellBeginEdit);
-            //dataGridView1.CellEndEdit += new DataGridViewCellEventHandler(DataGridView1_CellEndEdit);
         }
-        #region Ayarlar
+        
+
         private void Button1_Click(object sender, EventArgs e)
         {
-            metroStyleManager1.Style = (MetroFramework.MetroColorStyle)cbmoBxRenk.SelectedIndex;
-            dataGridView1.Style = Style;
-            cbmoBxRenk.Style = Style;
-            //metroTile1.Style = Style;
-            pnlSlidAyarlar.BackColor = this.ForeColor;
+            SaveSettings();
         }
-        #endregion
+        
 
         #region Kişi Ekle
+
+        //
+        //  Ad, Soyad ve Telefon numarası girilmeden ekleme butonu aktif edilmiyor.
+        //
         private void Txt_KisiEkle_TabStopChanged(object sender, EventArgs e)
         {
             KisiEkleKontrol();
@@ -64,7 +64,9 @@ namespace TelefonRehberi
             if (TxtBxTelNo.Text != "") LblTelKntrl.Text = "";
             else LblTelKntrl.Text = "*";
         }
-
+        //
+        //   Buton aktif olduktan sonra "Kişi Ekle" menusunden kayıtlar SQL server'a işleniyor.
+        //
         private void BtnSaveKisiEkle_Click(object sender, EventArgs e)
         {
             Kisiler kisiler = new Kisiler
@@ -82,7 +84,9 @@ namespace TelefonRehberi
         }
         #endregion
 
-        #region DataGridEkleSilGüncelle
+        #region DATAGRID VERİ SİLME EKLEME GÜNCELLEME
+        
+        ////////////////////////////////////////////////////////////////////////
         // list türünden datatable türüne dönüşüm
         public static DataTable ToDataTable<T>(List<T> items)
         {
@@ -110,6 +114,7 @@ namespace TelefonRehberi
         }
 
        
+        ////////////////////////////////////////////////////////////////////////
         private Kisiler kisi;
 
         // datagridview1 üzerinde değişimleri algılayıp update insert işlemlerini gerçekleştiriyor
@@ -142,18 +147,14 @@ namespace TelefonRehberi
                 }
             }
         }
-
+        ////////////////////////////////////////////////////////////////////////
         private void dataGridView1_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
         {
             if(dataGridView1.CurrentRow.Cells["KisilerID"].Value != DBNull.Value && dataGridView1.CurrentRow.Index != -1)
             {
                 int temp = Convert.ToInt32(dataGridView1.CurrentRow.Cells["KisilerID"].Value);
-                if(temp > 0)
-                {
-
                 if (MessageBox.Show("Bu kaydı silmek istediğinize emin misiniz?", "DataGridView", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                   
                     Kisiler kisilerx = db.Kisiler.Find(temp);
                     db.Kisiler.Remove(kisilerx);
                     db.SaveChanges();
@@ -162,28 +163,13 @@ namespace TelefonRehberi
                 }
                 else
                     e.Cancel = true;
-
-                }
-
             }
             else
                  e.Cancel = true;
         }
-        #endregion
-
-        private void DataGridView_Guncelle()
-        {
-            DataTable dtbl = new DataTable();
-            dtbl = ToDataTable(db.Kisiler.ToList());
-            dataGridView1.DataSource = dtbl;
-        }
-
-
-
-        #region MyRegion
-
-        #endregion
-
+        ////////////////////////////////////////////////////////////////////////
+        
+        // Telefon Numarası hücresine karakter girişini engelliyor
         private void dataGridView1_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
             
@@ -195,17 +181,25 @@ namespace TelefonRehberi
             else
              e.Control.KeyPress -= AllowNumbersOnly;
         }
+        ////////////////////////////////////////////////////////////////////////
+        ///
+        #endregion
+
+        private void DataGridView_Guncelle()
+        {
+            DataTable dtbl = new DataTable();
+            dtbl = ToDataTable(db.Kisiler.ToList());
+            dataGridView1.DataSource = dtbl;
+        }
+
+        
         private void AllowNumbersOnly(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
                 e.Handled = true;
         }
 
-        private void TxtBxTelNo_EnabledChanged(object sender, EventArgs e)
-        {
-            MessageBox.Show("asda");
-        }
-
+        //Tabloda seçili satırı tespit edip siliyor
         private void btnDel1_Click(object sender, EventArgs e)
         {
             if(dataGridView1.CurrentRow.Cells["KisilerID"].Value != DBNull.Value && dataGridView1.CurrentRow.Index != -1)
@@ -227,7 +221,7 @@ namespace TelefonRehberi
 
             }
         }
-
+        // Tablodan seçime göre silme butonu aktif - pasif
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             if(dataGridView1.CurrentRow != null)
@@ -246,6 +240,7 @@ namespace TelefonRehberi
             }
         }
 
+        // Ad, Soyad ve Numaradan işlemi arama yapılıyor
         private void TxtBxAra_Click(object sender, EventArgs e)
         {
                 var sorgu = (from ks in db.Kisiler
@@ -268,13 +263,17 @@ namespace TelefonRehberi
             dtbl = ToDataTable(sorgu.ToList());
             dataGridView1.DataSource = dtbl;
         }
-
+        // Arama TextBox'ında entera basılınca direk arasın
         private void TxtBxAra_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
                 TxtBxAra_Click(this, new EventArgs());
         }
 
+
+
+        //  Ayar Menusu açıkken ekleme menüsü açılmasın.
+        //  Ekleme Menusu açıkken ayar menüsü açılmasın.
         private void btnAdd1_Click(object sender, EventArgs e)
         {
             btnSet.Enabled = btnSet.Enabled ? false : true;
@@ -284,6 +283,106 @@ namespace TelefonRehberi
         {
             btnAdd1.Enabled = btnAdd1.Enabled ? false : true;
         }
+
+
+        #region AYARLAR
+
+        // Kayıtlı ayarlar program ilk çalıştığında yükleniyor
+        private void SetupSettings()
+        {
+            this.metroStyleManager1.Theme = Settings.Default.CmbBoxTema;
+            this.metroStyleManager1.Style = Settings.Default.StyleManegerSet;
+            this.StyleManager           = metroStyleManager1;
+            this.dataGridView1.Style    = Style;
+            this.cmbBoxRenk.Style       = Style;
+
+            this.cmbBoxTema.SelectedIndex       = (int)Settings.Default.CmbBoxTema;
+            this.cmbBoxRenk.SelectedIndex       = Settings.Default.CmbBoxRenk;
+            this.chckBxTabloDuzenleme.Checked   = Settings.Default.T_DuzenEtkinlestir;
+            this.chckBxTabloEkleme.Checked      = Settings.Default.T_EkleEtkinlestir;
+            this.chckBxTabloSilme.Checked       = Settings.Default.T_SilEtkinlestir;
+            this.chckBxTabloSiralama.Checked    = Settings.Default.T_SiralamaEtkinlestir;
+        }
+
+        // Gerçek zamanlı ayarlar kayıt altına alınıyor program kapanıp açıldığında aynı (tema-renk-vs) ayarlardan başlaması sağlanıyor.
+        private void SaveSettings()
+        {
+            Settings.Default.CmbBoxTema         = (MetroFramework.MetroThemeStyle)cmbBoxTema.SelectedIndex;
+            Settings.Default.StyleManegerSet    = (MetroFramework.MetroColorStyle)cmbBoxRenk.SelectedIndex;
+
+            Settings.Default.CmbBoxRenk             = this.cmbBoxRenk.SelectedIndex;
+            Settings.Default.T_DuzenEtkinlestir     = this.chckBxTabloDuzenleme.Checked;
+            Settings.Default.T_EkleEtkinlestir      = this.chckBxTabloEkleme.Checked;
+            Settings.Default.T_SilEtkinlestir       = this.chckBxTabloSilme.Checked;
+            Settings.Default.T_SiralamaEtkinlestir  = this.chckBxTabloSiralama.Checked;
+
+            Settings.Default.Save();
+        }
+
+        //
+        // Ayarlar menusundeki butonların seçilip onaylanmasıyla ilgili metotlar
+        //
+
+        private void chckBxTabloDuzenleme_CheckedChanged(object sender, EventArgs e)
+        {
+            if(!chckBxTabloDuzenleme.Checked)
+            {
+                this.dataGridView1.ReadOnly = true;
+                this.KisilerID.ReadOnly     = true;
+                this.KisiAdi.ReadOnly       = true;
+                this.KisiSoyadi.ReadOnly    = true;
+                this.TelNo.ReadOnly         = true;
+                this.Email.ReadOnly         = true;
+                this.Sirket.ReadOnly        = true;
+            }
+            else
+            {
+                this.dataGridView1.ReadOnly = false;
+                this.KisilerID.ReadOnly     = false;
+                this.KisiAdi.ReadOnly       = false;
+                this.KisiSoyadi.ReadOnly    = false;
+                this.TelNo.ReadOnly         = false;
+                this.Email.ReadOnly         = false;
+                this.Sirket.ReadOnly        = false;
+            }
+        }
+
+        private void chckBxTabloEkleme_CheckedChanged(object sender, EventArgs e)
+        {
+            if(chckBxTabloEkleme.Checked)
+                this.dataGridView1.AllowUserToAddRows = true;
+            else
+                this.dataGridView1.AllowUserToAddRows = false;
+        }
+
+        private void chckBxTabloSilme_CheckedChanged(object sender, EventArgs e)
+        {
+            if(chckBxTabloSilme.Checked)
+                this.dataGridView1.AllowUserToDeleteRows = true;
+            else
+                this.dataGridView1.AllowUserToDeleteRows = false;
+        }
+
+        private void chckBxTabloSiralama_CheckedChanged(object sender, EventArgs e)
+        {
+            if(chckBxTabloSiralama.Checked)
+                this.dataGridView1.AllowUserToOrderColumns = false;
+            else
+                this.dataGridView1.AllowUserToOrderColumns = false;
+        }
+
+        private void cmbBoxRenk_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            metroStyleManager1.Style = dataGridView1.Style =(MetroFramework.MetroColorStyle)cmbBoxRenk.SelectedIndex;
+        }
+
+        private void cmbBoxTema_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            metroStyleManager1.Theme = (MetroFramework.MetroThemeStyle)cmbBoxTema.SelectedIndex;
+        }
+
+        #endregion
+        
     }
 
 }
