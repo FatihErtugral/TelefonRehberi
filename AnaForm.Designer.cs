@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnaForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
             this.TxtBxAra = new MetroFramework.Controls.MetroTextBox();
             this.pnlNav = new System.Windows.Forms.Panel();
@@ -42,6 +42,8 @@
             this.btnSave1 = new System.Windows.Forms.Button();
             this.btnAdd1 = new System.Windows.Forms.Button();
             this.pnlSlidAyarlar = new System.Windows.Forms.Panel();
+            this.grpBxTema = new System.Windows.Forms.GroupBox();
+            this.cmbBoxTema = new MetroFramework.Controls.MetroComboBox();
             this.grpBxRenk = new System.Windows.Forms.GroupBox();
             this.cmbBoxRenk = new MetroFramework.Controls.MetroComboBox();
             this.btnRenkSave = new System.Windows.Forms.Button();
@@ -74,11 +76,10 @@
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.pnlBody = new System.Windows.Forms.Panel();
             this.metroTile2 = new MetroFramework.Controls.MetroTile();
-            this.grpBxTema = new System.Windows.Forms.GroupBox();
-            this.cmbBoxTema = new MetroFramework.Controls.MetroComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.pnlNav.SuspendLayout();
             this.pnlSlidAyarlar.SuspendLayout();
+            this.grpBxTema.SuspendLayout();
             this.grpBxRenk.SuspendLayout();
             this.grpBxTabloAyarlari.SuspendLayout();
             this.pnlSliderTitle.SuspendLayout();
@@ -86,7 +87,6 @@
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.pnlBody.SuspendLayout();
-            this.grpBxTema.SuspendLayout();
             this.SuspendLayout();
             // 
             // metroStyleManager1
@@ -152,6 +152,7 @@
             this.btnSet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(44)))), ((int)(((byte)(65)))));
             this.btnSet.BackgroundImage = global::TelefonRehberi.Properties.Resources.appbar_settings;
             this.btnSet.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSet.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSet.FlatAppearance.BorderSize = 0;
             this.btnSet.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnSet.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(54)))), ((int)(((byte)(76)))));
@@ -171,6 +172,7 @@
             this.btnDel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnDel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDel1.BackgroundImage")));
             this.btnDel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDel1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDel1.FlatAppearance.BorderSize = 0;
             this.btnDel1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDel1.ForeColor = System.Drawing.Color.White;
@@ -185,9 +187,10 @@
             // 
             // btnSave1
             // 
-            this.btnSave1.BackColor = System.Drawing.Color.PaleVioletRed;
+            this.btnSave1.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btnSave1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave1.BackgroundImage")));
             this.btnSave1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSave1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSave1.FlatAppearance.BorderSize = 0;
             this.btnSave1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave1.ForeColor = System.Drawing.Color.White;
@@ -201,11 +204,13 @@
             // 
             // btnAdd1
             // 
-            this.btnAdd1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(46)))), ((int)(((byte)(155)))));
+            this.btnAdd1.BackColor = System.Drawing.Color.MediumAquamarine;
             this.btnAdd1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdd1.BackgroundImage")));
             this.btnAdd1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAdd1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdd1.FlatAppearance.BorderSize = 0;
-            this.btnAdd1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(51)))), ((int)(((byte)(172)))));
+            this.btnAdd1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
+            this.btnAdd1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.YellowGreen;
             this.btnAdd1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd1.ForeColor = System.Drawing.Color.White;
             this.btnAdd1.Location = new System.Drawing.Point(43, 0);
@@ -231,6 +236,40 @@
             this.pnlSlidAyarlar.Name = "pnlSlidAyarlar";
             this.pnlSlidAyarlar.Size = new System.Drawing.Size(240, 685);
             this.pnlSlidAyarlar.TabIndex = 11;
+            // 
+            // grpBxTema
+            // 
+            this.grpBxTema.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.grpBxTema.BackColor = System.Drawing.Color.Transparent;
+            this.grpBxTema.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.grpBxTema.Controls.Add(this.cmbBoxTema);
+            this.grpBxTema.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.grpBxTema.Location = new System.Drawing.Point(20, 314);
+            this.grpBxTema.Name = "grpBxTema";
+            this.grpBxTema.Size = new System.Drawing.Size(200, 69);
+            this.grpBxTema.TabIndex = 5;
+            this.grpBxTema.TabStop = false;
+            this.grpBxTema.Tag = "";
+            this.grpBxTema.Text = "Renk Ayarı";
+            // 
+            // cmbBoxTema
+            // 
+            this.cmbBoxTema.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbBoxTema.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(44)))), ((int)(((byte)(65)))));
+            this.cmbBoxTema.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cmbBoxTema.FontWeight = MetroFramework.MetroComboBoxWeight.Bold;
+            this.cmbBoxTema.IntegralHeight = false;
+            this.cmbBoxTema.ItemHeight = 23;
+            this.cmbBoxTema.Items.AddRange(new object[] {
+            "Default",
+            "Light",
+            "Dark"});
+            this.cmbBoxTema.Location = new System.Drawing.Point(21, 24);
+            this.cmbBoxTema.Name = "cmbBoxTema";
+            this.cmbBoxTema.Size = new System.Drawing.Size(158, 29);
+            this.cmbBoxTema.TabIndex = 3;
+            this.cmbBoxTema.UseSelectable = true;
+            this.cmbBoxTema.SelectedIndexChanged += new System.EventHandler(this.cmbBoxTema_SelectedIndexChanged);
             // 
             // grpBxRenk
             // 
@@ -408,7 +447,7 @@
             // 
             // pnlSlidKisiEkle
             // 
-            this.pnlSlidKisiEkle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(51)))), ((int)(((byte)(172)))));
+            this.pnlSlidKisiEkle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(64)))), ((int)(((byte)(73)))));
             this.pnlSlidKisiEkle.Controls.Add(this.LblTelKntrl);
             this.pnlSlidKisiEkle.Controls.Add(this.LblSoyadKntrl);
             this.pnlSlidKisiEkle.Controls.Add(this.LblAdKntrl);
@@ -662,7 +701,7 @@
             // panel6
             // 
             this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(46)))), ((int)(((byte)(155)))));
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(64)))), ((int)(((byte)(73)))));
             this.panel6.Controls.Add(this.lblEkleTitle);
             this.panel6.Location = new System.Drawing.Point(-200, 0);
             this.panel6.Margin = new System.Windows.Forms.Padding(0);
@@ -691,14 +730,14 @@
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeight = 20;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -708,14 +747,14 @@
             this.TelNo,
             this.Email,
             this.Sirket});
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -725,14 +764,14 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.RowHeadersWidth = 20;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -770,10 +809,10 @@
             // TelNo
             // 
             this.TelNo.DataPropertyName = "TelNo";
-            dataGridViewCellStyle18.Format = "N0";
-            dataGridViewCellStyle18.NullValue = null;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.TelNo.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle2.Format = "N0";
+            dataGridViewCellStyle2.NullValue = null;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.TelNo.DefaultCellStyle = dataGridViewCellStyle2;
             this.TelNo.HeaderText = "Tel No";
             this.TelNo.MaxInputLength = 11;
             this.TelNo.Name = "TelNo";
@@ -830,40 +869,6 @@
             this.metroTile2.Text = "metroTile2";
             this.metroTile2.UseSelectable = true;
             // 
-            // grpBxTema
-            // 
-            this.grpBxTema.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.grpBxTema.BackColor = System.Drawing.Color.Transparent;
-            this.grpBxTema.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.grpBxTema.Controls.Add(this.cmbBoxTema);
-            this.grpBxTema.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.grpBxTema.Location = new System.Drawing.Point(20, 314);
-            this.grpBxTema.Name = "grpBxTema";
-            this.grpBxTema.Size = new System.Drawing.Size(200, 69);
-            this.grpBxTema.TabIndex = 5;
-            this.grpBxTema.TabStop = false;
-            this.grpBxTema.Tag = "";
-            this.grpBxTema.Text = "Renk Ayarı";
-            // 
-            // cmbBoxTema
-            // 
-            this.cmbBoxTema.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbBoxTema.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(44)))), ((int)(((byte)(65)))));
-            this.cmbBoxTema.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cmbBoxTema.FontWeight = MetroFramework.MetroComboBoxWeight.Bold;
-            this.cmbBoxTema.IntegralHeight = false;
-            this.cmbBoxTema.ItemHeight = 23;
-            this.cmbBoxTema.Items.AddRange(new object[] {
-            "Default",
-            "Light",
-            "Dark"});
-            this.cmbBoxTema.Location = new System.Drawing.Point(21, 24);
-            this.cmbBoxTema.Name = "cmbBoxTema";
-            this.cmbBoxTema.Size = new System.Drawing.Size(158, 29);
-            this.cmbBoxTema.TabIndex = 3;
-            this.cmbBoxTema.UseSelectable = true;
-            this.cmbBoxTema.SelectedIndexChanged += new System.EventHandler(this.cmbBoxTema_SelectedIndexChanged);
-            // 
             // AnaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -883,6 +888,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).EndInit();
             this.pnlNav.ResumeLayout(false);
             this.pnlSlidAyarlar.ResumeLayout(false);
+            this.grpBxTema.ResumeLayout(false);
             this.grpBxRenk.ResumeLayout(false);
             this.grpBxTabloAyarlari.ResumeLayout(false);
             this.pnlSliderTitle.ResumeLayout(false);
@@ -893,7 +899,6 @@
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.pnlBody.ResumeLayout(false);
-            this.grpBxTema.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
